@@ -9,6 +9,16 @@
     android:background="@color/themeColor2">
     <!--Background 는 themeColor2로, 그리고 아이콘 부분을 흰색으로 둘까?-->
 
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:text="프로젝트 생성"
+        android:gravity="center_vertical|center_horizontal"
+        android:textColor="#ffffff"
+        android:textSize="15dp"
+        android:background="@color/themeColor"/>
+
+
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="0dp"
@@ -23,13 +33,121 @@
             android:paddingBottom="10dp"
             android:paddingLeft="15dp"
             android:paddingRight="15dp"
-            android:paddingTop="20dp">
+            android:paddingTop="0dp">
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+
+                <EditText
+                    android:id="@+id/projectName"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:layout_marginBottom="0dp"
+                    android:layout_marginTop="20dp"
+                    android:background="#ffffff"
+                    android:hint="프로젝트 명"
+                    android:paddingLeft="10dp"
+                    android:textSize="13dp" />
+
+
+                <EditText
+                    android:id="@+id/projectInfo"
+                    android:layout_width="match_parent"
+                    android:layout_height="60dp"
+                    android:layout_marginBottom="10dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_weight="3"
+                    android:background="#ffffff"
+                    android:hint="간략한 프로젝트 내용"
+                    android:paddingLeft="10dp"
+                    android:textSize="13dp" />
+
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#58C6FF"
+                android:layout_marginBottom="10dp"
+                android:orientation="vertical">
 
                 <!--여기다가 아이콘을 추가해야한다-->
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="30dp"
+                    android:background="#ffffff"
+                    android:gravity="center_horizontal|center_vertical"
+                    android:text="대표 아이콘 지정" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="70dp"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:id="@+id/icon1"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_margin="5dp"
+                        android:layout_weight="1"
+                        android:src="@drawable/whiteboard" />
+
+                    <ImageView
+                        android:id="@+id/icon2"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_margin="5dp"
+                        android:layout_weight="1"
+                        android:src="@drawable/bulb" />
+
+                    <ImageView
+                        android:id="@+id/icon3"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_margin="5dp"
+                        android:layout_weight="1"
+                        android:src="@drawable/checklist" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="70dp"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:id="@+id/icon4"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_margin="5dp"
+                        android:layout_weight="1"
+                        android:src="@drawable/handshake" />
+
+                    <ImageView
+                        android:id="@+id/icon5"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_margin="5dp"
+                        android:layout_weight="1"
+                        android:src="@drawable/user" />
+
+                    <ImageView
+                        android:id="@+id/icon6"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_margin="5dp"
+                        android:layout_weight="1"
+                        android:src="@drawable/document" />
+
+                </LinearLayout>
+
+
 
             </LinearLayout>
 
@@ -60,35 +178,7 @@
 
 
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical">
 
-                <EditText
-                    android:layout_width="match_parent"
-                    android:layout_height="30dp"
-                    android:layout_marginBottom="0dp"
-                    android:layout_marginTop="20dp"
-                    android:background="#ffffff"
-                    android:hint="프로젝트 명"
-                    android:paddingLeft="10dp"
-                    android:textSize="13dp" />
-
-
-                <EditText
-                    android:layout_width="match_parent"
-                    android:layout_height="60dp"
-                    android:layout_marginBottom="0dp"
-                    android:layout_marginTop="10dp"
-                    android:layout_weight="3"
-                    android:background="#ffffff"
-                    android:hint="간략한 프로젝트 내용"
-                    android:paddingLeft="10dp"
-                    android:textSize="13dp" />
-
-
-            </LinearLayout>
 
 
         </LinearLayout>
@@ -103,30 +193,32 @@
         android:orientation="horizontal">
 
         <Button
+            android:id="@+id/addProject"
             android:layout_width="0dp"
-            android:layout_marginTop="15dp"
-            android:layout_marginRight="10dp"
-            android:layout_marginLeft="20dp"
-            android:layout_marginBottom="15dp"
-            android:layout_gravity="center_vertical|center_horizontal"
             android:layout_height="match_parent"
+            android:layout_gravity="center_vertical|center_horizontal"
+            android:layout_marginBottom="15dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="15dp"
+            android:layout_weight="1"
             android:background="@color/themeColor"
             android:text="등록"
-            android:textColor="#ffffff"
-            android:layout_weight="1" />
+            android:textColor="#ffffff" />
 
         <Button
+            android:id="@+id/cancelProject"
             android:layout_width="0dp"
-            android:layout_marginTop="15dp"
-            android:layout_marginRight="20dp"
-            android:layout_marginLeft="10dp"
-            android:layout_marginBottom="15dp"
-            android:layout_gravity="center_vertical|center_horizontal"
             android:layout_height="match_parent"
+            android:layout_gravity="center_vertical|center_horizontal"
+            android:layout_marginBottom="15dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginTop="15dp"
+            android:layout_weight="1"
             android:background="@color/themeColor"
             android:text="취소"
-            android:textColor="#ffffff"
-            android:layout_weight="1" />
+            android:textColor="#ffffff" />
 
 
 

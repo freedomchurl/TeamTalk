@@ -39,7 +39,7 @@ public class MainActivity extends Activity {
         MainActivity에서 extra데이터를 가져와야 한다.
     */
 
-
+    private static final int FirstMsg = 1; // Activity 전달에 쓰인다.
 
 
     ArrayList items = new ArrayList<Room>();
@@ -61,12 +61,13 @@ public class MainActivity extends Activity {
                 //  앞에다가 추가할 필요가 있다. 그리고 정렬은?
 
                 Intent i = new Intent(MainActivity.this,AddActivity.class);
-                startActivity(i);
+
+                startActivityForResult(i,FirstMsg);
 
                 //items.add(new Room(R.drawable.logo,"자료구조설계",3));
                 //items.add(0,new Room(R.drawable.logo,aa[i++],3));
                 Log.d("Add","addSuccessful");
-                adapter.notifyDataSetChanged();
+
             }
         });
 
@@ -88,6 +89,36 @@ public class MainActivity extends Activity {
 
     }
 
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+
+        if(resultCode == RESULT_OK)
+        {
+            // 여기서는 추가작업을 해주어야 한다.
+            String projectName = data.getStringExtra("Name");
+            String projectInfo = data.getStringExtra("Info");
+            String projectdueDate = data.getStringExtra("Date");
+            String projectIcon = data.getStringExtra("Icon");
+
+
+            items.add(0,new Room(projectIcon,projectName,projectInfo,projectdueDate));
+
+            adapter.notifyDataSetChanged();
+
+            // 이 부분에서 서버에 올려야한다!!!
+            // We need to upload data to server
+        }
+        else if(resultCode == RESULT_CANCELED)
+        {
+            // 취소한 경우 아무것도 하지않아도 된다.
+        }
+        else
+        {
+            Log.d("Nothing","What?");
+        }
+    }
 
     class MyAdpater extends RecyclerView.Adapter {
         private Context context;
@@ -138,6 +169,8 @@ public class MainActivity extends Activity {
                     public void onClick(View v)
                     {
                         // 그 채팅방으로 들어가는 기능이 필요하다.
+
+
                     }
                 });
 

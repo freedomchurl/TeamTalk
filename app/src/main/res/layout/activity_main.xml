@@ -59,6 +59,7 @@
         android:layout_gravity="bottom|right"
         android:src="@drawable/ic_add_w"
         android:scaleType="centerInside"
+        app:fab_colorNormal="#0B0B61"
         android:layout_margin="16dp" />
 
 
