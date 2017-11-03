@@ -8,6 +8,8 @@
     android:background="@color/themeColor2"
     tools:context="com.example.churl.teamproject_app.MainActivity">
 
+    <!---->
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"

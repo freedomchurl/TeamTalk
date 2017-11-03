@@ -2,11 +2,13 @@ package com.example.churl.teamproject_app;
 
 import android.graphics.drawable.Drawable;
 
+import java.io.Serializable;
+
 /**
  * Created by churl on 2017-11-02.
  */
 
-public class Room {
+public class Room implements Serializable{
 
     int image;
     String imagetitle;
@@ -44,6 +46,11 @@ public class Room {
         setImageID();
     }
 
+    public void setRoom_id(int room_id)
+    {
+        this.room_id = room_id;
+    }
+
     public void setImageID()
     {
         if(room_icon.equals("bulb"))
@@ -58,6 +65,49 @@ public class Room {
             image = R.drawable.whiteboard;
         else if(room_icon.equals("user"))
             image = R.drawable.user;
+    }
+
+    public void setImage(int image)
+    {
+        this.image = image;
+    }
+
+    public void setImagetitle(String imagetitle)
+    {
+        this.imagetitle = imagetitle;
+    }
+
+    public int getRoom_id()
+    {
+        return this.room_id;
+    }
+    public void setRoom_name(String room_name)
+    {
+        this.room_name = room_name;
+    }
+    public String getRoom_name()
+    {
+        return this.room_name;
+    }
+    public void setRoom_info(String room_info)
+    {
+        this.room_info = room_info;
+    }
+    public String getRoom_info()
+    {
+        return this.room_info;
+    }
+    public void setRoom_date(String room_date)
+    {
+        this.room_date = room_date;
+    }
+    public String getRoom_date()
+    {
+        return this.room_date;
+    }
+    public void setRoom_icon(String room_icon)
+    {
+        this.room_icon = room_icon;
     }
 
 }

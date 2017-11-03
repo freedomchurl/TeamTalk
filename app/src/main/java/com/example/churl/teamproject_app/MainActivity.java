@@ -40,7 +40,7 @@ public class MainActivity extends Activity {
     */
 
     private static final int FirstMsg = 1; // Activity 전달에 쓰인다.
-
+    private static final int ProjectMain = 2;
 
     ArrayList items = new ArrayList<Room>();
 
@@ -94,29 +94,38 @@ public class MainActivity extends Activity {
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
 
-        if(resultCode == RESULT_OK)
-        {
-            // 여기서는 추가작업을 해주어야 한다.
-            String projectName = data.getStringExtra("Name");
-            String projectInfo = data.getStringExtra("Info");
-            String projectdueDate = data.getStringExtra("Date");
-            String projectIcon = data.getStringExtra("Icon");
+        Log.d("RequestCod?",String.valueOf(requestCode));
+
+        if(requestCode == FirstMsg) { // 이 경우가, 결국 Add Activity 를 갔다왔을 때의 경우다.
+            if (resultCode == RESULT_OK) {
+                // 여기서는 추가작업을 해주어야 한다.
+                String projectName = data.getStringExtra("Name");
+                String projectInfo = data.getStringExtra("Info");
+                String projectdueDate = data.getStringExtra("Date");
+                String projectIcon = data.getStringExtra("Icon");
 
 
-            items.add(0,new Room(projectIcon,projectName,projectInfo,projectdueDate));
+                items.add(0, new Room(projectIcon, projectName, projectInfo, projectdueDate));
 
-            adapter.notifyDataSetChanged();
+                adapter.notifyDataSetChanged();
 
-            // 이 부분에서 서버에 올려야한다!!!
-            // We need to upload data to server
+                // 이 부분에서 서버에 올려야한다!!!
+                // We need to upload data to server
+                // 서버에 올리고나면,  room_id가 부여될 것인데, 이 roomid를 다시 가져와서 객체에 넣어야한다.
+                int serverResultid;
+
+                // 여기다가 Async를 익명클래스나 이너클래스로 작성한다.  그리고 serverResultid를 통해 0번 객체의 id를 부여해야한다.
+                // 중요!!!!
+
+            } else if (resultCode == RESULT_CANCELED) {
+                // 취소한 경우 아무것도 하지않아도 된다.
+            } else {
+                Log.d("Nothing", "What?");
+            }
         }
-        else if(resultCode == RESULT_CANCELED)
+        else if (requestCode == ProjectMain)
         {
-            // 취소한 경우 아무것도 하지않아도 된다.
-        }
-        else
-        {
-            Log.d("Nothing","What?");
+
         }
     }
 
@@ -169,7 +178,14 @@ public class MainActivity extends Activity {
                     public void onClick(View v)
                     {
                         // 그 채팅방으로 들어가는 기능이 필요하다.
+                    Intent i = new Intent(MainActivity.this,ProjectMainActivity.class);
 
+                    int pos = getPosition();
+
+
+                    i.putExtra("RoomData",mItems.get(pos));
+
+                    startActivityForResult(i,ProjectMain);
 
                     }
                 });
