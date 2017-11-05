@@ -12,7 +12,7 @@ public class Room implements Serializable{
 
     int image;
     String imagetitle;
-    private int room_id;
+    private String room_id;
     private String room_name;
     private String room_info;
     private String room_date;
@@ -27,14 +27,14 @@ public class Room implements Serializable{
         return imagetitle;
     }
 
-    public Room(int image, String imagetitle,int room_id)
+    public Room(int image, String imagetitle,String room_id)
     {
         this.image = image;
         this.imagetitle = imagetitle;
         this.room_id = room_id; // room info를 가져오기 위함.
     }
 
-    public Room(String icon_name, String projecttitle, String projectInfo, String projectDue)
+    public Room(String icon_name, String projecttitle, String projectInfo, String projectDue,String room_id)
     {
 
         this.room_name = projecttitle;
@@ -42,11 +42,14 @@ public class Room implements Serializable{
         this.room_info = projectInfo;
         this.room_icon = icon_name;
         this.imagetitle = projecttitle;
+        this.room_id = room_id;
 
         setImageID();
     }
 
-    public void setRoom_id(int room_id)
+
+
+    public void setRoom_id(String room_id)
     {
         this.room_id = room_id;
     }
@@ -65,6 +68,8 @@ public class Room implements Serializable{
             image = R.drawable.whiteboard;
         else if(room_icon.equals("user"))
             image = R.drawable.user;
+        else if(room_icon.equals(""))
+            image = R.drawable.default_icon;
     }
 
     public void setImage(int image)
@@ -77,7 +82,7 @@ public class Room implements Serializable{
         this.imagetitle = imagetitle;
     }
 
-    public int getRoom_id()
+    public String getRoom_id()
     {
         return this.room_id;
     }

@@ -6,6 +6,10 @@
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
     <uses-permission android:name="android.permission.CHANGE_WIFI_STATE"/>
+    <uses-permission android:name="android.permission.CALL_PHONE"/>
+    <uses-permission android:name="android.permission.CALL_PHONE"/>
+    <uses-permission android:name="android.permission.DIAL_PHONE"/>
+
 
 
     <uses-permission android:name="android.permission.INTERNET"/>
@@ -38,6 +42,11 @@
 
         <activity android:name=".AddActivity"/>
         <activity android:name=".ProjectMainActivity"/>
+
+        <activity android:name=".MapActivity"/>
+        <activity android:name=".TeamListActivity"/>
+        <activity android:name=".ProjectInfo"/>
+        <activity android:name=".AddMemberActivity"/>
     </application>
 
 </manifest>

@@ -51,114 +51,124 @@
 
 
     <ScrollView
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="10">
+    android:layout_width="match_parent"
+    android:layout_height="0dp"
+    android:layout_weight="10">
 
-        <!--팀 프로젝트 정보 버튼이 하나 필요-->
-        <!--팀 프로젝트 아이디어방-->
-        <!--팀 스케쥴 정하는 방 -->
-        <!---->
+    <!--팀 프로젝트 정보 버튼이 하나 필요-->
+    <!--팀 프로젝트 아이디어방-->
+    <!--팀 스케쥴 정하는 방 -->
+    <!---->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:orientation="vertical"
+        android:layout_height="wrap_content">
+
         <LinearLayout
             android:layout_width="match_parent"
-            android:orientation="vertical"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical|center_horizontal"
+            android:gravity="center_horizontal|center_vertical"
+            android:orientation="horizontal">
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_vertical|center_horizontal"
-                android:gravity="center_horizontal|center_vertical"
-                android:orientation="horizontal">
-
-                <!-- 프로젝트 정보 -->
-                <ImageButton
-                    android:id="@+id/menu1"
-                    android:layout_width="0dp"
-                    android:layout_height="180dp"
-                    android:layout_margin="3dp"
-                    android:layout_weight="1"
-                    android:background="@drawable/rounding_menu1"
-                    android:scaleType="centerInside"
-                    android:src="@drawable/menu1" />
+            <!-- 프로젝트 정보 -->
+            <ImageButton
+                android:id="@+id/menu1"
+                android:layout_width="0dp"
+                android:layout_height="180dp"
+                android:layout_margin="3dp"
+                android:layout_weight="1"
+                android:background="@drawable/rounding_menu1"
+                android:scaleType="centerInside"
+                android:src="@drawable/menu1" />
 
 
-                <!-- 프로젝트 아이디어방, 채팅방이라는 느낌보다는 게시판이라는 느낌으로? -->
-                <ImageButton
-                    android:layout_width="0dp"
-                    android:layout_height="180dp"
-                    android:layout_weight="1"
-                    android:src="@drawable/menu2"
-                    android:scaleType="centerInside"
-                    android:layout_margin="3dp"
-                    android:background="@drawable/rounding_menu2" />
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_vertical|center_horizontal"
-                android:gravity="center_horizontal|center_vertical"
-                android:orientation="horizontal">
-
-                <!-- 팀원의 현재위치 -->
-                <ImageButton
-                    android:layout_width="0dp"
-                    android:layout_height="120dp"
-                    android:layout_margin="3dp"
-                    android:layout_weight="1"
-                    android:background="@drawable/rounding_menu3" />
-
-
-                <!-- 팀원 추가 -->
-                <ImageButton
-                    android:layout_width="0dp"
-                    android:layout_height="120dp"
-                    android:layout_margin="3dp"
-                    android:layout_weight="1"
-                    android:background="@drawable/rounding_menu4"/>
-
-            </LinearLayout>
-
-            <!-- 상대방 무음풀고 전화하기 -->
-            <!-- 백그라운드로 -->
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_vertical|center_horizontal"
-                android:gravity="center_horizontal|center_vertical"
-                android:orientation="horizontal">
-
-                <!-- 팀원의 현재위치 -->
-                <ImageButton
-                    android:layout_width="0dp"
-                    android:layout_height="150dp"
-                    android:layout_margin="3dp"
-                    android:layout_weight="1"
-                    android:background="@drawable/rounding_menu5" />
-
-
-                <!-- 팀원 추가 -->
-                <ImageButton
-                    android:layout_width="0dp"
-                    android:layout_height="150dp"
-                    android:layout_margin="3dp"
-                    android:layout_weight="1"
-                    android:background="@drawable/rounding_menu6"/>
-
-            </LinearLayout>
+            <!-- 프로젝트 아이디어방, 채팅방이라는 느낌보다는 게시판이라는 느낌으로? -->
+            <ImageButton
+                android:layout_width="0dp"
+                android:layout_height="180dp"
+                android:layout_weight="1"
+                android:src="@drawable/menu2"
+                android:scaleType="centerInside"
+                android:layout_margin="3dp"
+                android:background="@drawable/rounding_menu2" />
 
         </LinearLayout>
 
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical|center_horizontal"
+            android:gravity="center_horizontal|center_vertical"
+            android:orientation="horizontal">
 
-    </ScrollView>
+            <!-- 팀원의 현재위치 -->
+            <ImageButton
+                android:id="@+id/menu3"
+                android:layout_width="0dp"
+                android:layout_height="180dp"
+                android:layout_margin="3dp"
+                android:layout_weight="1"
+                android:background="@drawable/rounding_menu3"
+                android:scaleType="centerInside"
+                android:src="@drawable/menu3" />
+
+
+            <!-- 팀원 추가 -->
+            <ImageButton
+                android:id="@+id/menu4"
+                android:layout_width="0dp"
+                android:layout_height="180dp"
+                android:layout_margin="3dp"
+                android:layout_weight="1"
+                android:background="@drawable/rounding_menu4"
+                android:scaleType="centerInside"
+                android:src="@drawable/menu4" />
+
+        </LinearLayout>
+
+        <!-- 상대방 무음풀고 전화하기 -->
+        <!-- 백그라운드로 -->
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical|center_horizontal"
+            android:gravity="center_horizontal|center_vertical"
+            android:orientation="horizontal">
+
+            <!-- 팀원의 현재위치 -->
+            <ImageButton
+                android:layout_width="0dp"
+                android:layout_height="180dp"
+                android:layout_margin="3dp"
+                android:layout_weight="1"
+                android:background="@drawable/rounding_menu5"
+                android:scaleType="centerInside"
+                android:src="@drawable/menu5" />
+
+
+            <!-- 팀원 추가 -->
+            <ImageButton
+                android:layout_width="0dp"
+                android:layout_height="180dp"
+                android:layout_margin="3dp"
+                android:layout_weight="1"
+                android:src="@drawable/menu6"
+                android:scaleType="centerInside"
+                android:background="@drawable/rounding_menu6" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+
+</ScrollView>
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:background="@color/themeColor"
-        android:layout_height="50dp">
+        android:layout_height="40dp"
+        android:background="@color/themeColor">
 
 
     </LinearLayout>

@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:background="@color/themeColor"
+        android:gravity="center_vertical"
+        android:paddingLeft="15dp"
+        android:text="프로젝트 상세 정보"
+        android:textColor="#ffffff"
+        android:textSize="18dp" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="10">
+
+        <!--팀 프로젝트 정보 버튼이 하나 필요-->
+        <!--팀 프로젝트 아이디어방-->
+        <!--팀 스케쥴 정하는 방 -->
+        <!---->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:orientation="vertical"
+            android:layout_height="wrap_content">
+
+
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="170dp"
+                android:src="@drawable/handshake"
+                android:id="@+id/projectInfo_icon2"
+                android:padding="10dp"
+                android:scaleType="centerInside"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:background="#BDBDBD"
+                android:gravity="center_vertical"
+                android:paddingLeft="12dp"
+                android:text="프로젝트 이름"
+                android:textColor="#000000"
+                android:textSize="12dp" />
+
+            <TextView
+                android:id="@+id/projectinfo_name2"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:background="@drawable/textviewline"
+                android:gravity="center_vertical|center_horizontal"
+                android:text="프로젝트 이름"
+                android:textColor="#000000"
+                android:textSize="14dp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:background="#BDBDBD"
+                android:gravity="center_vertical"
+                android:paddingLeft="12dp"
+                android:text="프로젝트 설명"
+                android:textColor="#000000"
+                android:textSize="12dp" />
+
+            <TextView
+                android:id="@+id/projectinfo_info2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="20dp"
+                android:background="@drawable/textviewline"
+                android:gravity="center_vertical|center_horizontal"
+                android:text="프로젝트 이름"
+                android:textColor="#000000"
+                android:textSize="14dp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:background="#BDBDBD"
+                android:gravity="center_vertical"
+                android:paddingLeft="12dp"
+                android:text="프로젝트 기한"
+                android:textColor="#000000"
+                android:textSize="12dp" />
+
+            <TextView
+                android:id="@+id/projectinfo_due2"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:background="@drawable/textviewline"
+                android:gravity="center_vertical|center_horizontal"
+                android:paddingLeft="12dp"
+                android:text="프로젝트 이름"
+                android:textColor="#000000"
+                android:textSize="14dp" />
+
+        </LinearLayout>
+
+
+    </ScrollView>
+
+</LinearLayout>

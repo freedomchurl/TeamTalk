@@ -6,13 +6,19 @@ import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.drawable.Icon;
 import android.media.Image;
+import android.os.AsyncTask;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.ImageView;
 
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+import java.net.HttpURLConnection;
+import java.net.URL;
 import java.util.Calendar;
 
 /**
@@ -36,7 +42,7 @@ public class AddActivity extends Activity {
     Button addButton = null;
     Button cancelButton =null;
 
-    private String clickedIcon = null;
+    private String clickedIcon = "";
 
     protected void onCreate(Bundle savedInstanceState)
     {
@@ -75,8 +81,12 @@ public class AddActivity extends Activity {
                 tmpIntent.putExtra("Icon",clickedIcon);
 
                 // 그리고 날짜를 넘겨주면 된다.
+                String inTime = new java.text.SimpleDateFormat("HHmmss").format(new java.util.Date());
 
-                String dateString = myDate.getYear() + "//" + (myDate.getMonth()+1) + "//" + myDate.getDayOfMonth();
+                String dateString2 = myDate.getYear() + "-" + (myDate.getMonth()+1) + "//" + myDate.getDayOfMonth();
+
+                String dateString = String.format("%04d-%02d-%02d %02d:%02d:%02d",myDate.getYear(), myDate.getMonth()+1,myDate.getDayOfMonth(),Integer.valueOf(inTime.substring(0,1)),
+                                Integer.valueOf(inTime.substring(2,3)),Integer.valueOf(inTime.substring(4,5)));
 
                 tmpIntent.putExtra("Date",dateString);
 
@@ -150,6 +160,9 @@ public class AddActivity extends Activity {
             }
         });
     }
+
+
+
 
     public void IconBorderReset()
     {
