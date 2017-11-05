@@ -70,7 +70,7 @@ public class ProjectMainActivity extends Activity{
             {
                 Intent i = new Intent(ProjectMainActivity.this,MapActivity.class);
                 // room id를 put 해주어야 한다
-
+                i.putExtra("PID",thisRoom.getRoom_id());
                 startActivity(i);
             }
         });

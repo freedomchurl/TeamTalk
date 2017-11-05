@@ -78,6 +78,16 @@ public class MainActivity extends Activity {
         get_num = getIntent().getStringExtra("i_num");
 
 
+        if(MyService.runningThread!=null)
+        {
+            MyService.runningThread.input.onDestroy();
+        }
+        Intent intent = new Intent(MainActivity.this, MyService.class);
+        intent.putExtra("uid", get_uid);
+        intent.putExtra("name", get_name);
+        startService(intent);
+
+
         fab = (FloatingActionButton) findViewById(R.id.float_add);
 
         fab.setOnClickListener(new View.OnClickListener() {

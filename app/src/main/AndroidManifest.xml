@@ -47,6 +47,10 @@
         <activity android:name=".TeamListActivity"/>
         <activity android:name=".ProjectInfo"/>
         <activity android:name=".AddMemberActivity"/>
+
+        <service android:name=".MyService"
+            android:enabled="true"
+            android:exported="true"/>
     </application>
 
 </manifest>
