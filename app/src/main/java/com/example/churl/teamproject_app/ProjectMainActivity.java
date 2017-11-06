@@ -1,10 +1,16 @@
 package com.example.churl.teamproject_app;
 
 import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
 import android.graphics.drawable.GradientDrawable;
+import android.media.AudioManager;
 import android.media.Image;
+import android.media.MediaPlayer;
+import android.media.RingtoneManager;
+import android.net.Uri;
 import android.os.Bundle;
+import android.provider.ContactsContract;
 import android.support.annotation.Nullable;
 import android.util.Log;
 import android.view.View;
@@ -33,6 +39,10 @@ public class ProjectMainActivity extends Activity{
     ImageButton menu4 = null;
 
     ImageButton menu5 = null;
+
+    ImageButton menu6 = null;
+    ImageButton menu2 = null;
+
     String u_id = "";
     String name = "";
 
@@ -48,6 +58,10 @@ public class ProjectMainActivity extends Activity{
         menu3 = (ImageButton) findViewById(R.id.menu3);
         menu4 = (ImageButton) findViewById(R.id.menu4);
         menu5 = (ImageButton) findViewById(R.id.menu5);
+        menu2 = (ImageButton)findViewById(R.id.menu2);
+
+        menu6 = (ImageButton) findViewById(R.id.menu6);
+
 
         thisRoom = (Room) getIntent().getSerializableExtra("RoomData");
         u_id = (String)getIntent().getStringExtra("UID"); // UID 가져왔고..
@@ -88,6 +102,44 @@ public class ProjectMainActivity extends Activity{
             }
         });
 
+
+        menu6.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View view) {
+                Uri alert = RingtoneManager.getDefaultUri(RingtoneManager.TYPE_ALARM);
+                MediaPlayer player = new MediaPlayer();
+
+                try{
+                    player.setDataSource(getApplicationContext(),alert);
+                }catch(Exception e1){
+                    e1.printStackTrace();
+                }
+                final AudioManager audioManager = (AudioManager)getSystemService(Context.AUDIO_SERVICE);
+                if(audioManager.getStreamVolume(AudioManager.STREAM_ALARM)!=0)
+                {
+                    player.setAudioStreamType(AudioManager.STREAM_ALARM);
+                    player.setLooping(true);
+                }
+                try
+                {
+                    player.prepare();
+                }catch (Exception e){
+
+                }
+                player.start();
+            }
+        });
+
+        menu2.setOnClickListener(new View.OnClickListener(){
+           public void onClick(View view)
+            {
+                Intent i = new Intent(ProjectMainActivity.this,Talk.class);
+
+                i.putExtra("PID",thisRoom.getRoom_id());
+                i.putExtra("UID",u_id);
+                startActivity(i);
+            }
+        });
         menu5.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view) {

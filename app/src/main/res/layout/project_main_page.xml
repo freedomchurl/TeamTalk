@@ -85,13 +85,14 @@
 
             <!-- 프로젝트 아이디어방, 채팅방이라는 느낌보다는 게시판이라는 느낌으로? -->
             <ImageButton
+                android:id="@+id/menu2"
                 android:layout_width="0dp"
                 android:layout_height="180dp"
-                android:layout_weight="1"
-                android:src="@drawable/menu2"
-                android:scaleType="centerInside"
                 android:layout_margin="3dp"
-                android:background="@drawable/rounding_menu2" />
+                android:layout_weight="1"
+                android:background="@drawable/rounding_menu2"
+                android:scaleType="centerInside"
+                android:src="@drawable/menu2" />
 
         </LinearLayout>
 
@@ -151,13 +152,14 @@
 
             <!-- 팀원 추가 -->
             <ImageButton
+                android:id="@+id/menu6"
                 android:layout_width="0dp"
                 android:layout_height="180dp"
                 android:layout_margin="3dp"
                 android:layout_weight="1"
-                android:src="@drawable/menu6"
+                android:background="@drawable/rounding_menu6"
                 android:scaleType="centerInside"
-                android:background="@drawable/rounding_menu6" />
+                android:src="@drawable/menu6" />
 
         </LinearLayout>
 
