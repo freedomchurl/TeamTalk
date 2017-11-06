@@ -42,9 +42,16 @@ public class ScheduleActivity extends Activity {
 
     ImageButton[] myButtons = new ImageButton[13*7];
 
+    String info = null;
+
     Spinner  mySpinner = null;
 
+    Button okButton = null;
+    Button cancelButton = null;
+
     ArrayAdapter<String> spinner_adapter = null;
+    String u_id = "";
+    String name = "";
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -53,7 +60,37 @@ public class ScheduleActivity extends Activity {
 
         this.setButtonID();
 
+
+
+        for(int i=0;i<91;i++) {
+            isClicked[i] = false;
+        }
+
         addButtonListener();
+
+        okButton = (Button) findViewById(R.id.okay);
+        okButton.setOnClickListener(new View.OnClickListener(){
+
+
+
+            @Override
+            public void onClick(View view) {
+                    // 지금 이걸 서버로 보내야한다.
+                WriteuserProject writeuserProject = new WriteuserProject();
+
+                info = MakeInfo();
+                writeuserProject.execute(info,u_id,p_id);
+                finish();
+            }
+        });
+        cancelButton = (Button)findViewById(R.id.cancel);
+        cancelButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                finish();
+            }
+        });
+
         mySpinner = (Spinner) findViewById(R.id.spinner); // Spinner 가져오고
         mySpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
@@ -61,7 +98,23 @@ public class ScheduleActivity extends Activity {
                     Log.d("asdasda","asdasd");
 
                     // 버튼 셋팅이 필요하다.
+                    info = mySchedule.get(i).info;
+                    Log.d("InfoValue",info);
                     setButtonColorInit(mySchedule.get(i).info);
+
+                    if(!mySchedule.get(i).name.equals(name))
+                    {
+                        okButton.setClickable(false);
+                        cancelButton.setClickable(false);
+                        // 버튼들도 안댐
+                        setButtonClickable(false);
+                    }
+                    else
+                    {
+                        setButtonClickable(true);
+                        okButton.setClickable(true);
+                        cancelButton.setClickable(true);
+                    }
 
             }
 
@@ -73,6 +126,8 @@ public class ScheduleActivity extends Activity {
         });
 
         p_id = getIntent().getStringExtra("PID");
+        u_id = getIntent().getStringExtra("UID");
+        name = getIntent().getStringExtra("NAME");
 
         // p_id를 가져왔다.
 
@@ -85,11 +140,43 @@ public class ScheduleActivity extends Activity {
 
     }
 
+    public String MakeInfo()
+    {
+        String returnValue = "";
+
+        for(int i=0;i<91;i++)
+        {
+            if(isClicked[i]==true)
+                returnValue += "1";
+            else
+                returnValue += "0";
+        }
+
+        return returnValue;
+    }
+
+    public void setButtonClickable(boolean input)
+    {
+        for(int i=0;i<91;i++)
+        {
+            myButtons[i].setClickable(input);//BackgroundColor(Color.parseColor("#3886E8"));
+        }
+
+    }
+
     public void setButtonColorInit(String input)
     {
         char [] car = input.toCharArray();
+
+        for(int i=0;i<91;i++)
+        {
+            myButtons[i].setBackgroundColor(Color.parseColor("#3886E8"));
+        }
+
+
+
         for(int i=0;i<car.length;i++){
-            if(car[i]==0)
+            if(car[i]=='0')
             {
                 myButtons[i].setBackgroundColor(Color.parseColor("#3886E8"));
                 isClicked[i] = false;
@@ -118,12 +205,12 @@ public class ScheduleActivity extends Activity {
             if(isClicked[i] == true)
             {
                 isClicked[i] = false;
-                myButtons[i].setBackgroundColor(Color.parseColor("#ff4081"));
+                myButtons[i].setBackgroundColor(Color.parseColor("#3886e8"));
             }
             else
             {
                 isClicked[i] = true;
-                myButtons[i].setBackgroundColor(Color.parseColor("#3886e8"));
+                myButtons[i].setBackgroundColor(Color.parseColor("#ff4081"));
             }
         }
     }
@@ -135,6 +222,64 @@ public class ScheduleActivity extends Activity {
             myButtons[i].setOnClickListener(new customButton(i));
         }
     }
+
+    public class WriteuserProject extends AsyncTask<String,Void,String>{
+
+        @Override
+        protected void onPostExecute(String s) {
+            super.onPostExecute(s);
+
+        }
+
+        public String doInBackground(String ...params)
+        {
+            try{
+
+                String input_info = params[0];
+                String input_uid = params[1];
+                String input_pid = params[2];
+
+                String url = "http://35.201.138.226/update_schedule.php?u_id=" + input_uid + "&p_id=" + input_pid + "&info=" + input_info+
+                        "";
+
+                URL obj = new URL(url); // URL 객체로 받고,
+
+                Log.d("ddddResult",url);
+
+
+
+                HttpURLConnection conn = (HttpURLConnection) obj.openConnection(); // open connection
+
+                conn.setReadTimeout(10000);
+                conn.setConnectTimeout(15000);
+                conn.setRequestMethod("GET");
+                conn.setDoInput(true);
+                conn.setDoOutput(true);
+
+                BufferedReader reader = new BufferedReader(new InputStreamReader(conn.getInputStream(),"UTF-8"));
+
+                String line;
+                StringBuilder sb = new StringBuilder();
+
+                while((line = reader.readLine())!=null)
+                {
+                    sb.append(line);
+                }
+
+                reader.close();
+                return sb.toString();
+
+            }catch(Exception e){
+
+                e.printStackTrace();
+            }
+
+            return null;
+        }
+
+
+    }
+
 
     public void setButtonID()
     {
@@ -303,7 +448,6 @@ public class ScheduleActivity extends Activity {
                             mySchedule.add(new ScheduleData(getu_id,getname,getinfo));
 
                             spinner_items.add(getname); // 추가하고나서
-                            spinner_items.add("ddddd");
 
                         }
 

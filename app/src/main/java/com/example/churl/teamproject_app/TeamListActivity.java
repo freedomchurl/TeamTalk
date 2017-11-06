@@ -57,6 +57,7 @@ public class TeamListActivity extends Activity{
 
     Room myRoom = null;
     String p_id = "";
+    String u_id = "";
 
     private static final int AddMemberMsg = 3; // Activity 전달에 쓰인다.
 
@@ -70,6 +71,7 @@ public class TeamListActivity extends Activity{
         fab = (FloatingActionButton) findViewById(R.id.float_add2);
 
         myRoom = (Room) getIntent().getSerializableExtra("RoomData");
+
 
         p_id = myRoom.getRoom_id();
 

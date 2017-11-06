@@ -33,6 +33,8 @@ public class ProjectMainActivity extends Activity{
     ImageButton menu4 = null;
 
     ImageButton menu5 = null;
+    String u_id = "";
+    String name = "";
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -48,7 +50,8 @@ public class ProjectMainActivity extends Activity{
         menu5 = (ImageButton) findViewById(R.id.menu5);
 
         thisRoom = (Room) getIntent().getSerializableExtra("RoomData");
-
+        u_id = (String)getIntent().getStringExtra("UID"); // UID 가져왔고..
+        name = getIntent().getStringExtra("NAME");
         Log.d("방이름은1",thisRoom.getRoom_name());
         Log.d("PID는1",thisRoom.getRoom_id());
         nameView.setText(thisRoom.getRoom_name());
@@ -90,6 +93,8 @@ public class ProjectMainActivity extends Activity{
             public void onClick(View view) {
                 Intent i = new Intent(ProjectMainActivity.this,ScheduleActivity.class);
                 i.putExtra("PID",thisRoom.getRoom_id());
+                i.putExtra("UID",u_id);
+                i.putExtra("NAME",name);
                 startActivity(i);
             }
         });
@@ -100,6 +105,8 @@ public class ProjectMainActivity extends Activity{
                 Intent i = new Intent(ProjectMainActivity.this,MapActivity.class);
                 // room id를 put 해주어야 한다
                 i.putExtra("PID",thisRoom.getRoom_id());
+                i.putExtra("UID",u_id);
+                i.putExtra("NAME",name);
                 startActivity(i);
             }
         });
@@ -111,6 +118,7 @@ public class ProjectMainActivity extends Activity{
                 // room id를 put 해주어야 한다
 
                 i.putExtra("RoomData",thisRoom);
+                i.putExtra("UID",u_id);
                 startActivity(i);
             }
         });

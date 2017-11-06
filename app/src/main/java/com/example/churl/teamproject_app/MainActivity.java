@@ -458,6 +458,8 @@ public class MainActivity extends Activity {
 
                     int pos = getPosition();
                     Log.d("왜못넘어가지?",mItems.get(pos).getRoom_id());
+                    i.putExtra("UID",get_uid);
+                    i.putExtra("NAME",get_name);
                     i.putExtra("RoomData",mItems.get(pos));
 
                     startActivityForResult(i,ProjectMain);
