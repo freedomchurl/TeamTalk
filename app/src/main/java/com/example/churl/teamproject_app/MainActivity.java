@@ -239,7 +239,8 @@ public class MainActivity extends Activity {
                 String input_uid = params[0];
                 String input_pid = params[1];
 
-                String url = "http://35.201.138.226/write_userProject.php?u_id=" + input_uid + "&p_id=" + input_pid; //+ "&icon=" + input_icon + "&due=" + input_due + "&uid=" + input_uid;
+                String url = "http://35.201.138.226/write_userProject.php?u_id=" + input_uid + "&p_id=" + input_pid + "&info=" +
+                        ""; //+ "&icon=" + input_icon + "&due=" + input_due + "&uid=" + input_uid;
 
                 URL obj = new URL(url); // URL 객체로 받고,
 
@@ -292,7 +293,7 @@ public class MainActivity extends Activity {
                 String url = "http://35.201.138.226/write_project.php?name=" + input_name + "&info=" + input_info + "&icon=" + input_icon + "&due=" + input_due + "&uid=" + input_uid;
 
                 URL obj = new URL(url); // URL 객체로 받고,
-
+                Log.d("이언지진짜똥폰쓴다",url);
                 HttpURLConnection conn = (HttpURLConnection) obj.openConnection(); // open connection
 
                 conn.setReadTimeout(10000);
@@ -308,6 +309,7 @@ public class MainActivity extends Activity {
 
                 while((line = reader.readLine())!=null)
                 {
+                    Log.d("이언지폰이문제야",line);
                     sb.append(line);
                 }
 

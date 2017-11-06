@@ -74,11 +74,12 @@ public class MyService extends Service implements LocationListener{
     {
         LocationManager manager = (LocationManager)getSystemService(Context.LOCATION_SERVICE);
 
-        Location location = manager.getLastKnownLocation(LocationManager.GPS_PROVIDER);
+        /*
+        //Location location = manager.getLastKnownLocation(LocationManager.GPS_PROVIDER);
         String msg = "Last Know Location -> Latitude : " + location.getLatitude() + "\nLongitude : "
                 + location.getLongitude();
 
-        Log.i("SampleLocation",msg);
+        Log.i("SampleLocation",msg);*/
 
         //Toast.makeText(getApplicationContext(),msg,Toast.LENGTH_SHORT).show();
 

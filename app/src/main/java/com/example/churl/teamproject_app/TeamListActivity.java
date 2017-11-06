@@ -167,7 +167,8 @@ public class TeamListActivity extends Activity{
                 String input_number = params[0];
 
 
-                String url = "http://35.201.138.226/write_userProject.php?u_id=" + input_number + "&p_id=" + p_id;
+                String url = "http://35.201.138.226/write_userProject.php?u_id=" + input_number + "&p_id=" + p_id + "&info=" +
+                        "";
 
                 URL obj = new URL(url); // URL 객체로 받고,
 
