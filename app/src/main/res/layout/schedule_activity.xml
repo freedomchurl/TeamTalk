@@ -21,7 +21,7 @@
 
             android:gravity="center_vertical"
             android:paddingLeft="15dp"
-            android:text="팀 멤버 스케줄"
+            android:text="이번주 팀 멤버 스케줄"
             android:textColor="#ffffff"
             android:textSize="15dp" />
 
@@ -31,18 +31,71 @@
     <Spinner
         android:id="@+id/spinner"
         android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:layout_margin="15dp"
+        android:layout_height="45dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
         android:background="@android:drawable/btn_dropdown"
         android:spinnerMode="dropdown" />
 
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:orientation="horizontal"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:layout_marginBottom="10dp"
+        android:paddingLeft="10dp"
+        android:paddingBottom="5dp"
+        android:paddingTop="10dp"
+        android:paddingRight="10dp"
+        android:layout_height="50dp">
 
-   
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="#FF4081"/>
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="3"
+            android:gravity="center"
+            android:text="바빠요"/>
+
+        <android.support.v4.widget.Space
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"/>
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="#3886E8"/>
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="3"
+            android:gravity="center"
+            android:text="가능해요"/>
+
+        <android.support.v4.widget.Space
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"/>
+
+    </LinearLayout>
+
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="25dp"
+        android:layout_marginRight="15dp"
+        android:layout_marginLeft="15dp"
         android:orientation="horizontal"
         android:layout_weight="0.5">
         <TextView
@@ -116,6 +169,8 @@
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="0dp"
+        android:layout_marginRight="15dp"
+        android:layout_marginLeft="15dp"
         android:layout_weight="10">
 
         <!--팀 프로젝트 정보 버튼이 하나 필요-->
@@ -155,7 +210,7 @@
                             android:orientation="horizontal">
                             <TextView
                                 android:layout_width="0dp"
-                                android:layout_height="90dp"
+                                android:layout_height="45dp"
                                 android:layout_weight="0.8"
                                 android:text="9시"
                                 android:background="@drawable/textviewline"
@@ -165,64 +220,64 @@
                             <ImageButton
                                 android:id="@+id/daySun1"
                                 android:layout_width="0dp"
-                                android:layout_height="90dp"
+                                android:layout_height="45dp"
                                 android:layout_margin="1dp"
                                 android:layout_weight="1"
-                                android:background="#3886e8"
+                                android:background="#ff4081"
                                 android:scaleType="centerInside" />
                             <!-- 프로젝트 정보 -->
                             <ImageButton
                                 android:id="@+id/dayMon1"
                                 android:layout_width="0dp"
-                                android:layout_height="90dp"
+                                android:layout_height="45dp"
                                 android:layout_margin="1dp"
                                 android:layout_weight="1"
-                                android:background="#3886e8"
+                                android:background="#ff4081"
                                 android:scaleType="centerInside"
                                 />
                             <ImageButton
                                 android:id="@+id/dayTue1"
                                 android:layout_width="0dp"
-                                android:layout_height="90dp"
+                                android:layout_height="45dp"
                                 android:layout_margin="1dp"
                                 android:layout_weight="1"
-                                android:background="#3886e8"
+                                android:background="#ff4081"
                                 android:scaleType="centerInside"
                                 />
                             <ImageButton
                                 android:id="@+id/dayWed1"
                                 android:layout_width="0dp"
-                                android:layout_height="90dp"
+                                android:layout_height="45dp"
                                 android:layout_margin="1dp"
                                 android:layout_weight="1"
-                                android:background="#3886e8"
+                                android:background="#ff4081"
                                 android:scaleType="centerInside"
                                 />
                             <ImageButton
                                 android:id="@+id/dayThu1"
                                 android:layout_width="0dp"
-                                android:layout_height="90dp"
+                                android:layout_height="45dp"
                                 android:layout_margin="1dp"
                                 android:layout_weight="1"
-                                android:background="#3886e8"
+                                android:background="#ff4081"
                                 android:scaleType="centerInside"
                                 />
                             <ImageButton
                                 android:id="@+id/dayFri1"
                                 android:layout_width="0dp"
-                                android:layout_height="90dp"
+                                android:layout_height="45dp"
                                 android:layout_margin="1dp"
                                 android:layout_weight="1"
-                                android:background="#3886e8"
+                                android:background="#ff4081"
                                 android:scaleType="centerInside"
                                 />
 
                             <ImageButton
                                 android:id="@+id/daySat1"
                                 android:layout_width="0dp"
-                                android:layout_height="90dp"
+                                android:layout_height="45dp"
                                 android:layout_weight="1"
-                                android:background="#3886e8"
+                                android:background="#ff4081"
                                 android:scaleType="centerInside"
                                 android:layout_margin="1dp"
                                 />
@@ -237,7 +292,7 @@
 
                             <TextView
                                 android:layout_width="0dp"
-                                android:layout_height="90dp"
+                                android:layout_height="45dp"
                                 android:layout_weight="0.8"
                                 android:text="10시"
                                 android:background="@drawable/textviewline"
@@ -246,64 +301,64 @@
                             <ImageButton
                                 android:id="@+id/daySun2"
                                 android:layout_width="0dp"
-                                android:layout_height="90dp"
+                                android:layout_height="45dp"
                                 android:layout_margin="1dp"
                                 android:layout_weight="1"
-                                android:background="#3886e8"
+                                android:background="#ff4081"
                                 android:scaleType="centerInside"
                                 />
                             <ImageButton
                                 android:id="@+id/dayMon2"
                                 android:layout_width="0dp"
-                                android:layout_height="90dp"
+                                android:layout_height="45dp"
                                 android:layout_margin="1dp"
                                 android:layout_weight="1"
-                                android:background="#3886e8"
+                                android:background="#ff4081"
                                 android:scaleType="centerInside"
                                 />
                             <ImageButton
                                 android:id="@+id/dayTue2"
                                 android:layout_width="0dp"
-                                android:layout_height="90dp"
+                                android:layout_height="45dp"
                                 android:layout_margin="1dp"
                                 android:layout_weight="1"
-                                android:background="#3886e8"
+                                android:background="#ff4081"
                                 android:scaleType="centerInside"
                                 />
                             <ImageButton
                                 android:id="@+id/dayWed2"
                                 android:layout_width="0dp"
-                                android:layout_height="90dp"
+                                android:layout_height="45dp"
                                 android:layout_margin="1dp"
                                 android:layout_weight="1"
-                                android:background="#3886e8"
+                                android:background="#ff4081"
                                 android:scaleType="centerInside"
                                 />
                             <ImageButton
                                 android:id="@+id/dayThu2"
                                 android:layout_width="0dp"
-                                android:layout_height="90dp"
+                                android:layout_height="45dp"
                                 android:layout_margin="1dp"
                                 android:layout_weight="1"
-                                android:background="#3886e8"
+                                android:background="#ff4081"
                                 android:scaleType="centerInside"
                                 />
                             <ImageButton
                                 android:id="@+id/dayFri2"
                                 android:layout_width="0dp"
-                                android:layout_height="90dp"
+                                android:layout_height="45dp"
                                 android:layout_margin="1dp"
                                 android:layout_weight="1"
-                                android:background="#3886e8"
+                                android:background="#ff4081"
                                 android:scaleType="centerInside"
                                 />
 
                             <ImageButton
                                 android:id="@+id/daySat2"
                                 android:layout_width="0dp"
-                                android:layout_height="90dp"
+                                android:layout_height="45dp"
                                 android:layout_weight="1"
-                                android:background="#3886e8"
+                                android:background="#ff4081"
                                 android:scaleType="centerInside"
                                 android:layout_margin="1dp"
                                 />
@@ -317,7 +372,7 @@
                             android:orientation="horizontal">
                             <TextView
                                 android:layout_width="0dp"
-                                android:layout_height="90dp"
+                                android:layout_height="45dp"
                                 android:layout_weight="0.8"
                                 android:text="11시"
                                 android:background="@drawable/textviewline"
@@ -326,64 +381,64 @@
                             <ImageButton
                                 android:id="@+id/daySun3"
                                 android:layout_width="0dp"
-                                android:layout_height="90dp"
+                                android:layout_height="45dp"
                                 android:layout_margin="1dp"
                                 android:layout_weight="1"
-                                android:background="#3886e8"
+                                android:background="#ff4081"
                                 android:scaleType="centerInside"
                                 />
                             <ImageButton
                                 android:id="@+id/dayMon3"
                                 android:layout_width="0dp"
-                                android:layout_height="90dp"
+                                android:layout_height="45dp"
                                 android:layout_margin="1dp"
                                 android:layout_weight="1"
-                                android:background="#3886e8"
+                                android:background="#ff4081"
                                 android:scaleType="centerInside"
                                 />
                             <ImageButton
                                 android:id="@+id/dayTue3"
                                 android:layout_width="0dp"
-                                android:layout_height="90dp"
+                                android:layout_height="45dp"
                                 android:layout_margin="1dp"
                                 android:layout_weight="1"
-                                android:background="#3886e8"
+                                android:background="#ff4081"
                                 android:scaleType="centerInside"
                                 />
                             <ImageButton
                                 android:id="@+id/dayWed3"
                                 android:layout_width="0dp"
-                                android:layout_height="90dp"
+                                android:layout_height="45dp"
                                 android:layout_margin="1dp"
                                 android:layout_weight="1"
-                                android:background="#3886e8"
+                                android:background="#ff4081"
                                 android:scaleType="centerInside"
                                 />
                             <ImageButton
                                 android:id="@+id/dayThu3"
                                 android:layout_width="0dp"
-                                android:layout_height="90dp"
+                                android:layout_height="45dp"
                                 android:layout_margin="1dp"
                                 android:layout_weight="1"
-                                android:background="#3886e8"
+                                android:background="#ff4081"
                                 android:scaleType="centerInside"
                                 />
                             <ImageButton
                                 android:id="@+id/dayFri3"
                                 android:layout_width="0dp"
-                                android:layout_height="90dp"
+                                android:layout_height="45dp"
                                 android:layout_margin="1dp"
                                 android:layout_weight="1"
-                                android:background="#3886e8"
+                                android:background="#ff4081"
                                 android:scaleType="centerInside"
                                 />
 
                             <ImageButton
                                 android:id="@+id/daySat3"
                                 android:layout_width="0dp"
-                                android:layout_height="90dp"
+                                android:layout_height="45dp"
                                 android:layout_weight="1"
-                                android:background="#3886e8"
+                                android:background="#ff4081"
                                 android:scaleType="centerInside"
                                 android:layout_margin="1dp"
                                 />
@@ -397,7 +452,7 @@
                             android:orientation="horizontal">
                             <TextView
                                 android:layout_width="0dp"
-                                android:layout_height="90dp"
+                                android:layout_height="45dp"
                                 android:layout_weight="0.8"
                                 android:text="12시"
                                 android:background="@drawable/textviewline"
@@ -406,64 +461,64 @@
                             <ImageButton
                                 android:id="@+id/daySun4"
                                 android:layout_width="0dp"
-                                android:layout_height="90dp"
+                                android:layout_height="45dp"
                                 android:layout_margin="1dp"
                                 android:layout_weight="1"
-                                android:background="#3886e8"
+                                android:background="#ff4081"
                                 android:scaleType="centerInside"
                                 />
                             <ImageButton
                                 android:id="@+id/dayMon4"
                                 android:layout_width="0dp"
-                                android:layout_height="90dp"
+                                android:layout_height="45dp"
                                 android:layout_margin="1dp"
                                 android:layout_weight="1"
-                                android:background="#3886e8"
+                                android:background="#ff4081"
                                 android:scaleType="centerInside"
                                 />
                             <ImageButton
                                 android:id="@+id/dayTue4"
                                 android:layout_width="0dp"
-                                android:layout_height="90dp"
+                                android:layout_height="45dp"
                                 android:layout_margin="1dp"
                                 android:layout_weight="1"
-                                android:background="#3886e8"
+                                android:background="#ff4081"
                                 android:scaleType="centerInside"
                                 />
                             <ImageButton
                                 android:id="@+id/dayWed4"
                                 android:layout_width="0dp"
-                                android:layout_height="90dp"
+                                android:layout_height="45dp"
                                 android:layout_margin="1dp"
                                 android:layout_weight="1"
-                                android:background="#3886e8"
+                                android:background="#ff4081"
                                 android:scaleType="centerInside"
                                 />
                             <ImageButton
                                 android:id="@+id/dayThu4"
                                 android:layout_width="0dp"
-                                android:layout_height="90dp"
+                                android:layout_height="45dp"
                                 android:layout_margin="1dp"
                                 android:layout_weight="1"
-                                android:background="#3886e8"
+                                android:background="#ff4081"
                                 android:scaleType="centerInside"
                                 />
                             <ImageButton
                                 android:id="@+id/dayFri4"
                                 android:layout_width="0dp"
-                                android:layout_height="90dp"
+                                android:layout_height="45dp"
                                 android:layout_margin="1dp"
                                 android:layout_weight="1"
-                                android:background="#3886e8"
+                                android:background="#ff4081"
                                 android:scaleType="centerInside"
                                 />
 
                             <ImageButton
                                 android:id="@+id/daySat4"
                                 android:layout_width="0dp"
-                                android:layout_height="90dp"
+                                android:layout_height="45dp"
                                 android:layout_weight="1"
-                                android:background="#3886e8"
+                                android:background="#ff4081"
                                 android:scaleType="centerInside"
                                 android:layout_margin="1dp"
                                 />
@@ -477,7 +532,7 @@
                             android:orientation="horizontal">
                             <TextView
                                 android:layout_width="0dp"
-                                android:layout_height="90dp"
+                                android:layout_height="45dp"
                                 android:layout_weight="0.8"
                                 android:text="13시"
                                 android:background="@drawable/textviewline"
@@ -486,64 +541,64 @@
                             <ImageButton
                                 android:id="@+id/daySun5"
                                 android:layout_width="0dp"
-                                android:layout_height="90dp"
+                                android:layout_height="45dp"
                                 android:layout_margin="1dp"
                                 android:layout_weight="1"
-                                android:background="#3886e8"
+                                android:background="#ff4081"
                                 android:scaleType="centerInside"
                                 />
                             <ImageButton
                                 android:id="@+id/dayMon5"
                                 android:layout_width="0dp"
-                                android:layout_height="90dp"
+                                android:layout_height="45dp"
                                 android:layout_margin="1dp"
                                 android:layout_weight="1"
-                                android:background="#3886e8"
+                                android:background="#ff4081"
                                 android:scaleType="centerInside"
                                 />
                             <ImageButton
                                 android:id="@+id/dayTue5"
                                 android:layout_width="0dp"
-                                android:layout_height="90dp"
+                                android:layout_height="45dp"
                                 android:layout_margin="1dp"
                                 android:layout_weight="1"
-                                android:background="#3886e8"
+                                android:background="#ff4081"
                                 android:scaleType="centerInside"
                                 />
                             <ImageButton
                                 android:id="@+id/dayWed5"
                                 android:layout_width="0dp"
-                                android:layout_height="90dp"
+                                android:layout_height="45dp"
                                 android:layout_margin="1dp"
                                 android:layout_weight="1"
-                                android:background="#3886e8"
+                                android:background="#ff4081"
                                 android:scaleType="centerInside"
                                 />
                             <ImageButton
                                 android:id="@+id/dayThu5"
                                 android:layout_width="0dp"
-                                android:layout_height="90dp"
+                                android:layout_height="45dp"
                                 android:layout_margin="1dp"
                                 android:layout_weight="1"
-                                android:background="#3886e8"
+                                android:background="#ff4081"
                                 android:scaleType="centerInside"
                                 />
                             <ImageButton
                                 android:id="@+id/dayFri5"
                                 android:layout_width="0dp"
-                                android:layout_height="90dp"
+                                android:layout_height="45dp"
                                 android:layout_margin="1dp"
                                 android:layout_weight="1"
-                                android:background="#3886e8"
+                                android:background="#ff4081"
                                 android:scaleType="centerInside"
                                 />
 
                             <ImageButton
                                 android:id="@+id/daySat5"
                                 android:layout_width="0dp"
-                                android:layout_height="90dp"
+                                android:layout_height="45dp"
                                 android:layout_weight="1"
-                                android:background="#3886e8"
+                                android:background="#ff4081"
                                 android:scaleType="centerInside"
                                 android:layout_margin="1dp"
                                 />
@@ -557,7 +612,7 @@
                             android:orientation="horizontal">
                             <TextView
                                 android:layout_width="0dp"
-                                android:layout_height="90dp"
+                                android:layout_height="45dp"
                                 android:layout_weight="0.8"
                                 android:text="14시"
                                 android:background="@drawable/textviewline"
@@ -566,55 +621,55 @@
                             <ImageButton
                                 android:id="@+id/daySun6"
                                 android:layout_width="0dp"
-                                android:layout_height="90dp"
+                                android:layout_height="45dp"
                                 android:layout_margin="1dp"
                                 android:layout_weight="1"
-                                android:background="#3886e8"
+                                android:background="#ff4081"
                                 android:scaleType="centerInside"
                                 />
                             <ImageButton
                                 android:id="@+id/dayMon6"
                                 android:layout_width="0dp"
-                                android:layout_height="90dp"
+                                android:layout_height="45dp"
                                 android:layout_margin="1dp"
                                 android:layout_weight="1"
-                                android:background="#3886e8"
+                                android:background="#ff4081"
                                 android:scaleType="centerInside"
                                 />
                             <ImageButton
                                 android:id="@+id/dayTue6"
                                 android:layout_width="0dp"
-                                android:layout_height="90dp"
+                                android:layout_height="45dp"
                                 android:layout_margin="1dp"
                                 android:layout_weight="1"
-                                android:background="#3886e8"
+                                android:background="#ff4081"
                                 android:scaleType="centerInside"
                                 />
                             <ImageButton
                                 android:id="@+id/dayWed6"
                                 android:layout_width="0dp"
-                                android:layout_height="90dp"
+                                android:layout_height="45dp"
                                 android:layout_margin="1dp"
                                 android:layout_weight="1"
-                                android:background="#3886e8"
+                                android:background="#ff4081"
                                 android:scaleType="centerInside"
                                 />
                             <ImageButton
                                 android:id="@+id/dayThu6"
                                 android:layout_width="0dp"
-                                android:layout_height="90dp"
+                                android:layout_height="45dp"
                                 android:layout_margin="1dp"
                                 android:layout_weight="1"
-                                android:background="#3886e8"
+                                android:background="#ff4081"
                                 android:scaleType="centerInside"
                                 />
                             <ImageButton
                                 android:id="@+id/dayFri6"
                                 android:layout_width="0dp"
-                                android:layout_height="90dp"
+                                android:layout_height="45dp"
                                 android:layout_margin="1dp"
                                 android:layout_weight="1"
-                                android:background="#3886e8"
+                                android:background="#ff4081"
                                 android:scaleType="centerInside"
                                 />
 
@@ -622,9 +677,9 @@
                             <ImageButton
                                 android:id="@+id/daySat6"
                                 android:layout_width="0dp"
-                                android:layout_height="90dp"
+                                android:layout_height="45dp"
                                 android:layout_weight="1"
-                                android:background="#3886e8"
+                                android:background="#ff4081"
                                 android:scaleType="centerInside"
                                 android:layout_margin="1dp"
                                 />
@@ -638,7 +693,7 @@
                             android:orientation="horizontal">
                             <TextView
                                 android:layout_width="0dp"
-                                android:layout_height="90dp"
+                                android:layout_height="45dp"
                                 android:layout_weight="0.8"
                                 android:text="15시"
                                 android:background="@drawable/textviewline"
@@ -647,64 +702,64 @@
                             <ImageButton
                                 android:id="@+id/daySun7"
                                 android:layout_width="0dp"
-                                android:layout_height="90dp"
+                                android:layout_height="45dp"
                                 android:layout_margin="1dp"
                                 android:layout_weight="1"
-                                android:background="#3886e8"
+                                android:background="#ff4081"
                                 android:scaleType="centerInside"
                                 />
                             <ImageButton
                                 android:id="@+id/dayMon7"
                                 android:layout_width="0dp"
-                                android:layout_height="90dp"
+                                android:layout_height="45dp"
                                 android:layout_margin="1dp"
                                 android:layout_weight="1"
-                                android:background="#3886e8"
+                                android:background="#ff4081"
                                 android:scaleType="centerInside"
                                 />
                             <ImageButton
                                 android:id="@+id/dayTue7"
                                 android:layout_width="0dp"
-                                android:layout_height="90dp"
+                                android:layout_height="45dp"
                                 android:layout_margin="1dp"
                                 android:layout_weight="1"
-                                android:background="#3886e8"
+                                android:background="#ff4081"
                                 android:scaleType="centerInside"
                                 />
                             <ImageButton
                                 android:id="@+id/dayWed7"
                                 android:layout_width="0dp"
-                                android:layout_height="90dp"
+                                android:layout_height="45dp"
                                 android:layout_margin="1dp"
                                 android:layout_weight="1"
-                                android:background="#3886e8"
+                                android:background="#ff4081"
                                 android:scaleType="centerInside"
                                 />
                             <ImageButton
                                 android:id="@+id/dayThu7"
                                 android:layout_width="0dp"
-                                android:layout_height="90dp"
+                                android:layout_height="45dp"
                                 android:layout_margin="1dp"
                                 android:layout_weight="1"
-                                android:background="#3886e8"
+                                android:background="#ff4081"
                                 android:scaleType="centerInside"
                                 />
                             <ImageButton
                                 android:id="@+id/dayFri7"
                                 android:layout_width="0dp"
-                                android:layout_height="90dp"
+                                android:layout_height="45dp"
                                 android:layout_margin="1dp"
                                 android:layout_weight="1"
-                                android:background="#3886e8"
+                                android:background="#ff4081"
                                 android:scaleType="centerInside"
                                 />
 
                             <ImageButton
                                 android:id="@+id/daySat7"
                                 android:layout_width="0dp"
-                                android:layout_height="90dp"
+                                android:layout_height="45dp"
                                 android:layout_weight="1"
-                                android:background="#3886e8"
+                                android:background="#ff4081"
                                 android:scaleType="centerInside"
                                 android:layout_margin="1dp"
                                 />
@@ -718,7 +773,7 @@
                             android:orientation="horizontal">
                             <TextView
                                 android:layout_width="0dp"
-                                android:layout_height="90dp"
+                                android:layout_height="45dp"
                                 android:layout_weight="0.8"
                                 android:text="16시"
                                 android:background="@drawable/textviewline"
@@ -727,55 +782,55 @@
                             <ImageButton
                                 android:id="@+id/daySun8"
                                 android:layout_width="0dp"
-                                android:layout_height="90dp"
+                                android:layout_height="45dp"
                                 android:layout_margin="1dp"
                                 android:layout_weight="1"
-                                android:background="#3886e8"
+                                android:background="#ff4081"
                                 android:scaleType="centerInside"
                                 />
                             <ImageButton
                                 android:id="@+id/dayMon8"
                                 android:layout_width="0dp"
-                                android:layout_height="90dp"
+                                android:layout_height="45dp"
                                 android:layout_margin="1dp"
                                 android:layout_weight="1"
-                                android:background="#3886e8"
+                                android:background="#ff4081"
                                 android:scaleType="centerInside"
                                 />
                             <ImageButton
                                 android:id="@+id/dayTue8"
                                 android:layout_width="0dp"
-                                android:layout_height="90dp"
+                                android:layout_height="45dp"
                                 android:layout_margin="1dp"
                                 android:layout_weight="1"
-                                android:background="#3886e8"
+                                android:background="#ff4081"
                                 android:scaleType="centerInside"
                                 />
                             <ImageButton
                                 android:id="@+id/dayWed8"
                                 android:layout_width="0dp"
-                                android:layout_height="90dp"
+                                android:layout_height="45dp"
                                 android:layout_margin="1dp"
                                 android:layout_weight="1"
-                                android:background="#3886e8"
+                                android:background="#ff4081"
                                 android:scaleType="centerInside"
                                 />
                             <ImageButton
                                 android:id="@+id/dayThu8"
                                 android:layout_width="0dp"
-                                android:layout_height="90dp"
+                                android:layout_height="45dp"
                                 android:layout_margin="1dp"
                                 android:layout_weight="1"
-                                android:background="#3886e8"
+                                android:background="#ff4081"
                                 android:scaleType="centerInside"
                                 />
                             <ImageButton
                                 android:id="@+id/dayFri8"
                                 android:layout_width="0dp"
-                                android:layout_height="90dp"
+                                android:layout_height="45dp"
                                 android:layout_margin="1dp"
                                 android:layout_weight="1"
-                                android:background="#3886e8"
+                                android:background="#ff4081"
                                 android:scaleType="centerInside"
                                 />
 
@@ -783,9 +838,9 @@
                             <ImageButton
                                 android:id="@+id/daySat8"
                                 android:layout_width="0dp"
-                                android:layout_height="90dp"
+                                android:layout_height="45dp"
                                 android:layout_weight="1"
-                                android:background="#3886e8"
+                                android:background="#ff4081"
                                 android:scaleType="centerInside"
                                 android:layout_margin="1dp"
                                 />
@@ -799,7 +854,7 @@
                             android:orientation="horizontal">
                             <TextView
                                 android:layout_width="0dp"
-                                android:layout_height="90dp"
+                                android:layout_height="45dp"
                                 android:layout_weight="0.8"
                                 android:text="17시"
                                 android:background="@drawable/textviewline"
@@ -808,55 +863,55 @@
                             <ImageButton
                                 android:id="@+id/daySun9"
                                 android:layout_width="0dp"
-                                android:layout_height="90dp"
+                                android:layout_height="45dp"
                                 android:layout_margin="1dp"
                                 android:layout_weight="1"
-                                android:background="#3886e8"
+                                android:background="#ff4081"
                                 android:scaleType="centerInside"
                                 />
                             <ImageButton
                                 android:id="@+id/dayMon9"
                                 android:layout_width="0dp"
-                                android:layout_height="90dp"
+                                android:layout_height="45dp"
                                 android:layout_margin="1dp"
                                 android:layout_weight="1"
-                                android:background="#3886e8"
+                                android:background="#ff4081"
                                 android:scaleType="centerInside"
                                 />
                             <ImageButton
                                 android:id="@+id/dayTue9"
                                 android:layout_width="0dp"
-                                android:layout_height="90dp"
+                                android:layout_height="45dp"
                                 android:layout_margin="1dp"
                                 android:layout_weight="1"
-                                android:background="#3886e8"
+                                android:background="#ff4081"
                                 android:scaleType="centerInside"
                                 />
                             <ImageButton
                                 android:id="@+id/dayWed9"
                                 android:layout_width="0dp"
-                                android:layout_height="90dp"
+                                android:layout_height="45dp"
                                 android:layout_margin="1dp"
                                 android:layout_weight="1"
-                                android:background="#3886e8"
+                                android:background="#ff4081"
                                 android:scaleType="centerInside"
                                 />
                             <ImageButton
                                 android:id="@+id/dayThu9"
                                 android:layout_width="0dp"
-                                android:layout_height="90dp"
+                                android:layout_height="45dp"
                                 android:layout_margin="1dp"
                                 android:layout_weight="1"
-                                android:background="#3886e8"
+                                android:background="#ff4081"
                                 android:scaleType="centerInside"
                                 />
                             <ImageButton
                                 android:id="@+id/dayFri9"
                                 android:layout_width="0dp"
-                                android:layout_height="90dp"
+                                android:layout_height="45dp"
                                 android:layout_margin="1dp"
                                 android:layout_weight="1"
-                                android:background="#3886e8"
+                                android:background="#ff4081"
                                 android:scaleType="centerInside"
                                 />
 
@@ -864,9 +919,9 @@
                                 android:id="@+id/daySat9"
                                 android:layout_width="0dp"
                                 android:layout_margin="1dp"
-                                android:layout_height="90dp"
+                                android:layout_height="45dp"
                                 android:layout_weight="1"
-                                android:background="#3886e8"
+                                android:background="#ff4081"
                                 android:scaleType="centerInside"
                                 />
 
@@ -879,7 +934,7 @@
                             android:orientation="horizontal">
                             <TextView
                                 android:layout_width="0dp"
-                                android:layout_height="90dp"
+                                android:layout_height="45dp"
                                 android:layout_weight="0.8"
                                 android:text="18시"
                                 android:background="@drawable/textviewline"
@@ -888,55 +943,55 @@
                             <ImageButton
                                 android:id="@+id/daySun10"
                                 android:layout_width="0dp"
-                                android:layout_height="90dp"
+                                android:layout_height="45dp"
                                 android:layout_margin="1dp"
                                 android:layout_weight="1"
-                                android:background="#3886e8"
+                                android:background="#ff4081"
                                 android:scaleType="centerInside"
                                 />
                             <ImageButton
                                 android:id="@+id/dayMon10"
                                 android:layout_width="0dp"
-                                android:layout_height="90dp"
+                                android:layout_height="45dp"
                                 android:layout_margin="1dp"
                                 android:layout_weight="1"
-                                android:background="#3886e8"
+                                android:background="#ff4081"
                                 android:scaleType="centerInside"
                                 />
                             <ImageButton
                                 android:id="@+id/dayTue10"
                                 android:layout_width="0dp"
-                                android:layout_height="90dp"
+                                android:layout_height="45dp"
                                 android:layout_margin="1dp"
                                 android:layout_weight="1"
-                                android:background="#3886e8"
+                                android:background="#ff4081"
                                 android:scaleType="centerInside"
                                 />
                             <ImageButton
                                 android:id="@+id/dayWed10"
                                 android:layout_width="0dp"
-                                android:layout_height="90dp"
+                                android:layout_height="45dp"
                                 android:layout_margin="1dp"
                                 android:layout_weight="1"
-                                android:background="#3886e8"
+                                android:background="#ff4081"
                                 android:scaleType="centerInside"
                                 />
                             <ImageButton
                                 android:id="@+id/dayThu10"
                                 android:layout_width="0dp"
-                                android:layout_height="90dp"
+                                android:layout_height="45dp"
                                 android:layout_margin="1dp"
                                 android:layout_weight="1"
-                                android:background="#3886e8"
+                                android:background="#ff4081"
                                 android:scaleType="centerInside"
                                 />
                             <ImageButton
                                 android:id="@+id/dayFri10"
                                 android:layout_width="0dp"
-                                android:layout_height="90dp"
+                                android:layout_height="45dp"
                                 android:layout_margin="1dp"
                                 android:layout_weight="1"
-                                android:background="#3886e8"
+                                android:background="#ff4081"
                                 android:scaleType="centerInside"
                                 />
 
@@ -944,9 +999,9 @@
                             <ImageButton
                                 android:id="@+id/daySat10"
                                 android:layout_width="0dp"
-                                android:layout_height="90dp"
+                                android:layout_height="45dp"
                                 android:layout_weight="1"
-                                android:background="#3886e8"
+                                android:background="#ff4081"
                                 android:scaleType="centerInside"
                                 android:layout_margin="1dp"
                                 />
@@ -960,7 +1015,7 @@
                             android:orientation="horizontal">
                             <TextView
                                 android:layout_width="0dp"
-                                android:layout_height="90dp"
+                                android:layout_height="45dp"
                                 android:layout_weight="0.8"
                                 android:text="19시"
                                 android:background="@drawable/textviewline"
@@ -969,55 +1024,55 @@
                             <ImageButton
                                 android:id="@+id/daySun11"
                                 android:layout_width="0dp"
-                                android:layout_height="90dp"
+                                android:layout_height="45dp"
                                 android:layout_margin="1dp"
                                 android:layout_weight="1"
-                                android:background="#3886e8"
+                                android:background="#ff4081"
                                 android:scaleType="centerInside"
                                 />
                             <ImageButton
                                 android:id="@+id/dayMon11"
                                 android:layout_width="0dp"
-                                android:layout_height="90dp"
+                                android:layout_height="45dp"
                                 android:layout_margin="1dp"
                                 android:layout_weight="1"
-                                android:background="#3886e8"
+                                android:background="#ff4081"
                                 android:scaleType="centerInside"
                                 />
                             <ImageButton
                                 android:id="@+id/dayTue11"
                                 android:layout_width="0dp"
-                                android:layout_height="90dp"
+                                android:layout_height="45dp"
                                 android:layout_margin="1dp"
                                 android:layout_weight="1"
-                                android:background="#3886e8"
+                                android:background="#ff4081"
                                 android:scaleType="centerInside"
                                 />
                             <ImageButton
                                 android:id="@+id/dayWed11"
                                 android:layout_width="0dp"
-                                android:layout_height="90dp"
+                                android:layout_height="45dp"
                                 android:layout_margin="1dp"
                                 android:layout_weight="1"
-                                android:background="#3886e8"
+                                android:background="#ff4081"
                                 android:scaleType="centerInside"
                                 />
                             <ImageButton
                                 android:id="@+id/dayThu11"
                                 android:layout_width="0dp"
-                                android:layout_height="90dp"
+                                android:layout_height="45dp"
                                 android:layout_margin="1dp"
                                 android:layout_weight="1"
-                                android:background="#3886e8"
+                                android:background="#ff4081"
                                 android:scaleType="centerInside"
                                 />
                             <ImageButton
                                 android:id="@+id/dayFri11"
                                 android:layout_width="0dp"
-                                android:layout_height="90dp"
+                                android:layout_height="45dp"
                                 android:layout_margin="1dp"
                                 android:layout_weight="1"
-                                android:background="#3886e8"
+                                android:background="#ff4081"
                                 android:scaleType="centerInside"
                                 />
 
@@ -1025,9 +1080,9 @@
                             <ImageButton
                                 android:id="@+id/daySat11"
                                 android:layout_width="0dp"
-                                android:layout_height="90dp"
+                                android:layout_height="45dp"
                                 android:layout_weight="1"
-                                android:background="#3886e8"
+                                android:background="#ff4081"
                                 android:scaleType="centerInside"
                                 android:layout_margin="1dp"
                                 />
@@ -1041,7 +1096,7 @@
                             android:orientation="horizontal">
                             <TextView
                                 android:layout_width="0dp"
-                                android:layout_height="90dp"
+                                android:layout_height="45dp"
                                 android:layout_weight="0.8"
                                 android:text="20시"
                                 android:background="@drawable/textviewline"
@@ -1050,55 +1105,55 @@
                             <ImageButton
                                 android:id="@+id/daySun12"
                                 android:layout_width="0dp"
-                                android:layout_height="90dp"
+                                android:layout_height="45dp"
                                 android:layout_margin="1dp"
                                 android:layout_weight="1"
-                                android:background="#3886e8"
+                                android:background="#ff4081"
                                 android:scaleType="centerInside"
                                 />
                             <ImageButton
                                 android:id="@+id/dayMon12"
                                 android:layout_width="0dp"
-                                android:layout_height="90dp"
+                                android:layout_height="45dp"
                                 android:layout_margin="1dp"
                                 android:layout_weight="1"
-                                android:background="#3886e8"
+                                android:background="#ff4081"
                                 android:scaleType="centerInside"
                                 />
                             <ImageButton
                                 android:id="@+id/dayTue12"
                                 android:layout_width="0dp"
-                                android:layout_height="90dp"
+                                android:layout_height="45dp"
                                 android:layout_margin="1dp"
                                 android:layout_weight="1"
-                                android:background="#3886e8"
+                                android:background="#ff4081"
                                 android:scaleType="centerInside"
                                 />
                             <ImageButton
                                 android:id="@+id/dayWed12"
                                 android:layout_width="0dp"
-                                android:layout_height="90dp"
+                                android:layout_height="45dp"
                                 android:layout_margin="1dp"
                                 android:layout_weight="1"
-                                android:background="#3886e8"
+                                android:background="#ff4081"
                                 android:scaleType="centerInside"
                                 />
                             <ImageButton
                                 android:id="@+id/dayThu12"
                                 android:layout_width="0dp"
-                                android:layout_height="90dp"
+                                android:layout_height="45dp"
                                 android:layout_margin="1dp"
                                 android:layout_weight="1"
-                                android:background="#3886e8"
+                                android:background="#ff4081"
                                 android:scaleType="centerInside"
                                 />
                             <ImageButton
                                 android:id="@+id/dayFri12"
                                 android:layout_width="0dp"
-                                android:layout_height="90dp"
+                                android:layout_height="45dp"
                                 android:layout_margin="1dp"
                                 android:layout_weight="1"
-                                android:background="#3886e8"
+                                android:background="#ff4081"
                                 android:scaleType="centerInside"
                                 />
 
@@ -1106,9 +1161,9 @@
                             <ImageButton
                                 android:id="@+id/daySat12"
                                 android:layout_width="0dp"
-                                android:layout_height="90dp"
+                                android:layout_height="45dp"
                                 android:layout_weight="1"
-                                android:background="#3886e8"
+                                android:background="#ff4081"
                                 android:scaleType="centerInside"
                                 android:layout_margin="1dp"
                                 />
@@ -1122,7 +1177,7 @@
                             android:orientation="horizontal">
                             <TextView
                                 android:layout_width="0dp"
-                                android:layout_height="90dp"
+                                android:layout_height="45dp"
                                 android:layout_weight="0.8"
                                 android:text="21시"
                                 android:background="@drawable/textviewline"
@@ -1131,65 +1186,65 @@
                             <ImageButton
                                 android:id="@+id/daySun13"
                                 android:layout_width="0dp"
-                                android:layout_height="90dp"
+                                android:layout_height="45dp"
                                 android:layout_margin="1dp"
                                 android:layout_weight="1"
-                                android:background="#3886e8"
+                                android:background="#ff4081"
                                 android:scaleType="centerInside"
                                 />
                             <ImageButton
                                 android:id="@+id/dayMon13"
                                 android:layout_width="0dp"
-                                android:layout_height="90dp"
+                                android:layout_height="45dp"
                                 android:layout_margin="1dp"
                                 android:layout_weight="1"
-                                android:background="#3886e8"
+                                android:background="#ff4081"
                                 android:scaleType="centerInside"
                                 />
                             <ImageButton
                                 android:id="@+id/dayTue13"
                                 android:layout_width="0dp"
-                                android:layout_height="90dp"
+                                android:layout_height="45dp"
                                 android:layout_margin="1dp"
                                 android:layout_weight="1"
-                                android:background="#3886e8"
+                                android:background="#ff4081"
                                 android:scaleType="centerInside"
                                 />
                             <ImageButton
                                 android:id="@+id/dayWed13"
                                 android:layout_width="0dp"
-                                android:layout_height="90dp"
+                                android:layout_height="45dp"
                                 android:layout_margin="1dp"
                                 android:layout_weight="1"
-                                android:background="#3886e8"
+                                android:background="#ff4081"
                                 android:scaleType="centerInside"
                                 />
                             <ImageButton
                                 android:id="@+id/dayThu13"
                                 android:layout_width="0dp"
-                                android:layout_height="90dp"
+                                android:layout_height="45dp"
                                 android:layout_margin="1dp"
                                 android:layout_weight="1"
-                                android:background="#3886e8"
+                                android:background="#ff4081"
                                 android:scaleType="centerInside"
                                 />
                             <ImageButton
                                 android:id="@+id/dayFri13"
                                 android:layout_width="0dp"
-                                android:layout_height="90dp"
+                                android:layout_height="45dp"
                                 android:layout_margin="1dp"
                                 android:layout_weight="1"
-                                android:background="#3886e8"
+                                android:background="#ff4081"
                                 android:scaleType="centerInside"
                                 />
 
                             <ImageButton
                                 android:id="@+id/daySat13"
                                 android:layout_width="0dp"
-                                android:layout_height="90dp"
+                                android:layout_height="45dp"
                                 android:layout_weight="1"
                                 android:layout_margin="1dp"
-                                android:background="#3886e8"
+                                android:background="#ff4081"
                                 android:scaleType="centerInside"
 
                                 />
@@ -1199,10 +1254,11 @@
                 </LinearLayout>
 
             </LinearLayout>
+
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
-                android:layout_weight="0.5"
+                android:layout_weight="0.1"
                 android:orientation="horizontal">
 
                 <Button

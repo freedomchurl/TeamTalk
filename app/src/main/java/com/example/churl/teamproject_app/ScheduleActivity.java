@@ -170,7 +170,7 @@ public class ScheduleActivity extends Activity {
 
         for(int i=0;i<91;i++)
         {
-            myButtons[i].setBackgroundColor(Color.parseColor("#3886E8"));
+            myButtons[i].setBackgroundColor(Color.parseColor("#FF4081"));
         }
 
 
@@ -178,14 +178,14 @@ public class ScheduleActivity extends Activity {
         for(int i=0;i<car.length;i++){
             if(car[i]=='0')
             {
-                myButtons[i].setBackgroundColor(Color.parseColor("#3886E8"));
+                myButtons[i].setBackgroundColor(Color.parseColor("#FF4081"));
                 isClicked[i] = false;
 
             }
             else
             {
                 isClicked[i] = true;
-                myButtons[i].setBackgroundColor(Color.parseColor("#FF4081"));
+                myButtons[i].setBackgroundColor(Color.parseColor("#3886E8"));
             }
         }
     }
@@ -205,12 +205,12 @@ public class ScheduleActivity extends Activity {
             if(isClicked[i] == true)
             {
                 isClicked[i] = false;
-                myButtons[i].setBackgroundColor(Color.parseColor("#3886e8"));
+                myButtons[i].setBackgroundColor(Color.parseColor("#FF4081"));
             }
             else
             {
                 isClicked[i] = true;
-                myButtons[i].setBackgroundColor(Color.parseColor("#ff4081"));
+                myButtons[i].setBackgroundColor(Color.parseColor("#3886E8"));
             }
         }
     }

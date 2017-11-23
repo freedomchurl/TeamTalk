@@ -66,8 +66,10 @@ public class ProjectMainActivity extends Activity{
         thisRoom = (Room) getIntent().getSerializableExtra("RoomData");
         u_id = (String)getIntent().getStringExtra("UID"); // UID 가져왔고..
         name = getIntent().getStringExtra("NAME");
+
         Log.d("방이름은1",thisRoom.getRoom_name());
         Log.d("PID는1",thisRoom.getRoom_id());
+
         nameView.setText(thisRoom.getRoom_name());
 
         String inTime = new java.text.SimpleDateFormat("yyyy-MM-dd").format(new java.util.Date());
@@ -96,9 +98,6 @@ public class ProjectMainActivity extends Activity{
                 i.putExtra("RoomData",thisRoom);
 
                 startActivity(i);
-
-
-
             }
         });
 

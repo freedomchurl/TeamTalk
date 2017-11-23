@@ -78,10 +78,13 @@ public class MainActivity extends Activity {
         get_num = getIntent().getStringExtra("i_num");
 
 
+        // 서비스 쓰레드를 담당하는 부분.
         if(MyService.runningThread!=null)
         {
             MyService.runningThread.input.onDestroy();
         }
+        // null이 아니면, 이미 있는건데..
+
         Intent intent = new Intent(MainActivity.this, MyService.class);
         intent.putExtra("uid", get_uid);
         intent.putExtra("name", get_name);
@@ -102,8 +105,7 @@ public class MainActivity extends Activity {
 
                 startActivityForResult(i,FirstMsg);
 
-                //items.add(new Room(R.drawable.logo,"자료구조설계",3));
-                //items.add(0,new Room(R.drawable.logo,aa[i++],3));
+                // startActivityForResult로, 메세지 콜백을 받도록 한다.
                 Log.d("Add","addSuccessful");
 
             }
@@ -127,10 +129,8 @@ public class MainActivity extends Activity {
 
         // 여기서 불러와야한다.
         GetProjectList getProjectList = new GetProjectList();
-
-
         getProjectList.execute(get_uid);
-
+        // ProjectLIst를 가져온다.
     }
 
 
@@ -192,6 +192,7 @@ public class MainActivity extends Activity {
                     }
                     else
                     {
+                        items.clear();
                         for (int i = 0; i < jsonArray.length(); i++) {
                             JSONObject item = jsonArray.getJSONObject(i); // Object를 가져오고
 
@@ -200,12 +201,11 @@ public class MainActivity extends Activity {
                             String iconfromServer = item.getString("icon");
                             String duefromServer = item.getString("due");
                             String pidfromServer = item.getString("p_id");
+                            // Project ID
 
                             items.add(0,new Room(iconfromServer,namefromServer,infofromServer,duefromServer,pidfromServer));
 
-
                         }
-
                         adapter.notifyDataSetChanged();
                     }
 
@@ -380,9 +380,6 @@ public class MainActivity extends Activity {
                 WriteProject writeProject = new WriteProject();
                 writeProject.execute(projectName,projectInfo,projectIcon,projectdueDate,get_uid);
 
-
-
-
                 // 이 부분에서 서버에 올려야한다!!!
                 // We need to upload data to server
                 // 서버에 올리고나면,  room_id가 부여될 것인데, 이 roomid를 다시 가져와서 객체에 넣어야한다.
@@ -401,7 +398,9 @@ public class MainActivity extends Activity {
         }
         else if (requestCode == ProjectMain)
         {
-
+            // 2017 - 11 - 24 추가.
+            GetProjectList getProjectList = new GetProjectList();
+            getProjectList.execute(get_uid);
         }
     }
 
