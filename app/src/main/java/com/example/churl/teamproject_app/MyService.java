@@ -9,6 +9,7 @@ import android.content.pm.PackageManager;
 import android.location.Location;
 import android.location.LocationListener;
 import android.location.LocationManager;
+import android.media.MediaPlayer;
 import android.os.AsyncTask;
 import android.os.Build;
 import android.os.Bundle;
@@ -37,6 +38,11 @@ public class MyService extends Service implements LocationListener{
     public static MyServiceThread runningThread = null;
 
     MyServiceThread myServiceThread = null;
+
+    // 여기서 소리를 켜줘야한다
+
+    MediaPlayer mp;
+    // Alarm
 
     String uid;
     String name;
@@ -83,8 +89,8 @@ public class MyService extends Service implements LocationListener{
 
         //Toast.makeText(getApplicationContext(),msg,Toast.LENGTH_SHORT).show();
 
-        long minTime = 2000;
-        float minDistance = 0;
+        long minTime = 10000;
+        float minDistance = 0.5f;
 
         manager.requestLocationUpdates(LocationManager.GPS_PROVIDER,minTime,minDistance,this);
 
@@ -125,6 +131,7 @@ public class MyService extends Service implements LocationListener{
         {
             try{
 
+                Log.d("UpdataeLocation","UPDATE");
                 String input_long = params[0];
                 String input_lat = params[1];
                 String uid = params[2];

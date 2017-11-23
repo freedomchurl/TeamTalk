@@ -5,4 +5,10 @@
     <color name="colorAccent">#FF4081</color>
     <color name="themeColor">#0C366C</color>
     <color name="themeColor2">#3886E8</color>
+    <color name="color1">#FE9A2E</color>
+    <color name="color2">#FE2E2E</color>
+    <color name="color3">#FF4081</color>
+    <color name="color4">#0C366C</color>
+    <color name="color5">#01DF01</color>
+    <color name="color6">#FE2E9A</color>
 </resources>

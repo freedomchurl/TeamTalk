@@ -60,6 +60,7 @@ public class MapActivity extends NMapActivity {
             public void onMapInitHandler(NMapView nMapView, NMapError nMapError) {
                 if(nMapError == null){
                     // success
+                    Log.d("InitSuccess","Success");
                     mMapController.setMapCenter(new NGeoPoint(126.956954,37.504147),11);
 
                     mMapView.setBuiltInZoomControls(true,null);
@@ -72,6 +73,8 @@ public class MapActivity extends NMapActivity {
                     NMapPOIdata poIdata = new NMapPOIdata(1,mMapViewerResourceProvider);
                     poIdata.beginPOIdata(1);
                     for(int i=0;i<overlist.size();i++) {
+
+                        Log.d("Add Data","Add");
 
                         poIdata.addPOIitem(overlist.get(i).getLatitude(),overlist.get(i).getLongitude(),overlist.get(i).getName(),markerId,0);
                     }
@@ -214,7 +217,10 @@ public class MapActivity extends NMapActivity {
                         String longfromServer = item.getString("longitude");
                         String latfromServer = item.getString("latitude");
 
-                        overlist.add(new MapData(Double.valueOf(longfromServer),Double.valueOf(latfromServer),namefromServer));
+                        Log.d("위치정보",namefromServer + " " + longfromServer + " " + latfromServer);
+
+                        if(Double.valueOf(latfromServer)!=0 || Double.valueOf(longfromServer)!=0)
+                            overlist.add(new MapData(Double.valueOf(longfromServer),Double.valueOf(latfromServer),namefromServer));
                     }
 
                     //mMapController.notifyMapCenterLocation();
@@ -226,4 +232,5 @@ public class MapActivity extends NMapActivity {
 
         }
     }
+
 }
