@@ -157,6 +157,15 @@ public class MapActivity extends NMapActivity {
         getLocation.execute(data);
     }
 
+    @Override
+    protected void onResume() {
+        super.onResume();
+        String data = getIntent().getStringExtra("PID"); // Key 를 수정해야한다.
+        GetLocation getLocation = new GetLocation();
+        getLocation.execute(data);
+
+    }
+
     public class GetLocation extends AsyncTask<String,Void,String> {
 
         public String doInBackground(String ...params)
@@ -223,8 +232,9 @@ public class MapActivity extends NMapActivity {
                             overlist.add(new MapData(Double.valueOf(longfromServer),Double.valueOf(latfromServer),namefromServer));
                     }
 
-                    //mMapController.notifyMapCenterLocation();
-                    //mMapView.notifyAll();
+                    mMapController.notifyMapCenterLocation();
+
+
 
 
                 }catch(JSONException e){}
