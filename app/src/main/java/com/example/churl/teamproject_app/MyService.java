@@ -9,7 +9,10 @@ import android.content.pm.PackageManager;
 import android.location.Location;
 import android.location.LocationListener;
 import android.location.LocationManager;
+import android.media.AudioManager;
 import android.media.MediaPlayer;
+import android.media.RingtoneManager;
+import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Build;
 import android.os.Bundle;
@@ -23,6 +26,7 @@ import android.widget.Toast;
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
+import java.net.Socket;
 import java.net.URL;
 import java.util.Observable;
 import java.util.concurrent.TimeUnit;
@@ -33,6 +37,7 @@ import java.util.concurrent.TimeUnit;
 
 public class MyService extends Service implements LocationListener{
 
+    final String serverIP = "10.210.60.61";
     public static String id="DEFAULT";
     public static boolean running = false;
     public static MyServiceThread runningThread = null;
@@ -58,10 +63,15 @@ public class MyService extends Service implements LocationListener{
 
        // startForeground(1,new Notification());
         startLocationService();
-
+        Log.d("asdasd","asdasdasd");
         uid = intent.getStringExtra("uid");
         name = intent.getStringExtra("name");
 
+        /*Socket sock = null;
+        try {
+            sock = new Socket(serverIP, 7676);
+        }catch (Exception e){Log.d("왜안되니!!!","왜!!");}
+        */
         myServiceThread = new MyServiceThread(uid,name,this);
         runningThread = myServiceThread;
         myServiceThread.start();
@@ -74,6 +84,31 @@ public class MyService extends Service implements LocationListener{
         super.onDestroy();
         runningThread.stopForever();
         runningThread = null;
+    }
+
+    public void Ringing()
+    {
+        Uri alert = RingtoneManager.getDefaultUri(RingtoneManager.TYPE_ALARM);
+        MediaPlayer player = new MediaPlayer();
+
+        try{
+            player.setDataSource(getApplicationContext(),alert);
+        }catch(Exception e1){
+            e1.printStackTrace();
+        }
+        final AudioManager audioManager = (AudioManager)getSystemService(Context.AUDIO_SERVICE);
+        if(audioManager.getStreamVolume(AudioManager.STREAM_ALARM)!=0)
+        {
+            player.setAudioStreamType(AudioManager.STREAM_ALARM);
+            player.setLooping(true);
+        }
+        try
+        {
+            player.prepare();
+        }catch (Exception e){
+
+        }
+        player.start();
     }
 
     private void startLocationService()

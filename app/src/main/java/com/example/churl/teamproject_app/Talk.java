@@ -294,9 +294,6 @@ public class Talk extends Activity{
             ((Talk.MyAdpater.ViewHolder)holder).contentDate.setText(mItems.get(position).getDate());
             ((Talk.MyAdpater.ViewHolder)holder).writeName.setBackgroundResource(mItems.get(position).getColorID());
 
-
-
-
         }
 
 

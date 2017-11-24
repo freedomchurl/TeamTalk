@@ -18,6 +18,9 @@ import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.TextView;
 
+import java.io.DataOutputStream;
+import java.io.OutputStream;
+import java.net.Socket;
 
 
 /**
@@ -39,6 +42,8 @@ public class ProjectMainActivity extends Activity{
     ImageButton menu4 = null;
 
     ImageButton menu5 = null;
+
+    final String serverIP = "10.210.60.61";
 
     ImageButton menu6 = null;
     ImageButton menu2 = null;
@@ -105,6 +110,7 @@ public class ProjectMainActivity extends Activity{
         menu6.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view) {
+                /*
                 Uri alert = RingtoneManager.getDefaultUri(RingtoneManager.TYPE_ALARM);
                 MediaPlayer player = new MediaPlayer();
 
@@ -125,7 +131,29 @@ public class ProjectMainActivity extends Activity{
                 }catch (Exception e){
 
                 }
-                player.start();
+                player.start();*/
+
+                new Thread(new Runnable() {
+                    @Override
+                    public void run() {
+                        try {
+                            Socket sock = new Socket(serverIP, 7676);
+
+
+                            OutputStream ous = sock.getOutputStream();
+                            DataOutputStream dos = new DataOutputStream(ous);
+
+                            String send = "ALARM///" + thisRoom.getRoom_id();
+
+                            dos.writeUTF(send);
+
+                            ous.close();
+                            dos.close();
+                            sock.close();
+
+                        }catch (Exception e){}
+                    }
+                }).start();
             }
         });
 
